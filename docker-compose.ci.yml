@@ -15,3 +15,5 @@ services:
       CI: true
     volumes:
       - .:/app
+      # Copy installed modules from built image.
+      - /app/node_modules/
