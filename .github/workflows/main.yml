@@ -25,7 +25,7 @@ jobs:
             prefix=test-image-
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7 # v4.5.1
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -71,7 +71,7 @@ jobs:
           submodules: recursive
 
       - name: Login to GitHub Container Registry
-        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7 # v4.5.1
+        uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4.6.0
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -100,7 +100,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     container:
-      image: rclone/rclone:1.62.2
+      image: docker.io/rclone/rclone:1.75.1
     strategy:
       matrix:
         deploy_env: [production, staging]

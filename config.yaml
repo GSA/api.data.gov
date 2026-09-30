@@ -1,5 +1,5 @@
 baseURL: /
-languageCode: en-us
+locale: en-us
 title: api.data.gov
 disableKinds:
   - RSS
@@ -116,8 +116,5 @@ module:
       target: static/node_modules/@uswds/uswds/dist/js/
 disable404: true
 security:
-  exec:
-    # Add HOME to allowed environment variables list for compatibility with
-    # asdf-nodejs for postcss.
-    osEnv:
-      - "(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM|HOME)$"
+  allowContent:
+    - ".*"
