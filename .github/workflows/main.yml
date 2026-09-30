@@ -6,6 +6,10 @@ env:
   COMPOSE_FILE: docker-compose.ci.yml
   TEST_IMAGE_REPO: ghcr.io/gsa/api.data.gov
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -94,6 +98,15 @@ jobs:
         with:
           name: build-${{ matrix.deploy_env }}
           path: ./public
+
+      # Push production builds to "build-history" branch to maintain history of
+      # built and deployed versions.
+      - name: Commit Build History
+        if: success() && github.repository_owner == 'GSA' && github.ref == 'refs/heads/main' && matrix.deploy_env == 'production'
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
+        with:
+          folder: ./public
+          branch: build-history
 
   deploy:
     if: success() && github.repository_owner == 'GSA' && github.ref == 'refs/heads/main'
