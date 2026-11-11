@@ -187,6 +187,12 @@ importers:
       form-serialize:
         specifier: ^0.7.2
         version: 0.7.2
+      franxx:
+        specifier: ^2.0.1
+        version: 2.0.1(history@5.3.0)
+      history:
+        specifier: ^5.3.0
+        version: 5.3.0
       ky:
         specifier: ^1.14.3
         version: 1.14.3
@@ -280,6 +286,10 @@ packages:
     resolution: {integrity: sha512-srpptsAkEbbNIC/q8nT7o+m6CQe8CJUTV/t7MYc9NnWlgYVtHOb7JH6SorxMhN0kuRJjVqXbKClG6xSbPtzz+g==}
     engines: {node: ^22.18.0 || >=24.11.0}
     hasBin: true
+
+  '@babel/runtime@7.29.13':
+    resolution: {integrity: sha512-v+oN26xP4YIlQsbQ/CbTH1WG5m/l/DjKKZNy/Kp3f/AFvbgt7Em/D0FeMM3O2hX0YzeN2M16W8lOpyhIkfCBcQ==}
+    engines: {node: '>=6.9.0'}
 
   '@babel/types@7.29.7':
     resolution: {integrity: sha512-4zBIxpPzowiZpusoFkyGVwakdRJUyuH5PxQ/PrqghfdFWWasvnCdPfQXHrenDai+gyLARulZjZowCOj6fjT4pA==}
@@ -748,6 +758,11 @@ packages:
   fraction.js@5.3.4:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
+  franxx@2.0.1:
+    resolution: {integrity: sha512-X2Ffs8SlZD4clCfHtSJpHGX+EEn52fEQ/9oBb0YPDzyUZ75SW854ym6IvEbMRx6n+jEhysIfVnc+SPT+nNFcog==}
+    peerDependencies:
+      history: ^5.2.0
+
   fs-extra@11.4.0:
     resolution: {integrity: sha512-EQsFzMUJkCKGr1ePqlYADkIUmHW1s3ZXr5Yqy6wbGrfUCphpl2maM/kyOIRA2HpP3AaFQTZXD4ldjek+nccddA==}
     engines: {node: '>=14.14'}
@@ -775,6 +790,9 @@ packages:
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
+
+  history@5.3.0:
+    resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -1312,6 +1330,8 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.4
 
+  '@babel/runtime@7.29.13': {}
+
   '@babel/types@7.29.7':
     dependencies:
       '@babel/helper-string-parser': 7.29.7
@@ -1802,6 +1822,10 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
+  franxx@2.0.1(history@5.3.0):
+    dependencies:
+      history: 5.3.0
+
   fs-extra@11.4.0:
     dependencies:
       graceful-fs: 4.2.11
@@ -1824,6 +1848,10 @@ snapshots:
   globals@17.7.0: {}
 
   graceful-fs@4.2.11: {}
+
+  history@5.3.0:
+    dependencies:
+      '@babel/runtime': 7.29.13
 
   hookable@5.5.3: {}
 
