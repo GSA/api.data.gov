@@ -1,10 +1,9 @@
-// eslint-disable-next-line import/no-unresolved
 import * as buildParams from "@params";
 import A11yDialog from "a11y-dialog";
 import escapeHtml from "escape-html";
 import serialize from "form-serialize";
-import { createHashHistory } from "history";
 import { createRouter } from "franxx";
+import { createHashHistory } from "history";
 
 const router = createRouter({
   history: createHashHistory(),
@@ -75,12 +74,10 @@ const options = {
 };
 
 if (!options.apiKey) {
-  // eslint-disable-next-line no-alert
   alert("apiUmbrellaSignupOptions.apiKey must be set");
 }
 
 if (!options.registrationSource) {
-  // eslint-disable-next-line no-alert
   alert("apiUmbrellaSignupOptions.registrationSource must be set");
 }
 
@@ -372,22 +369,16 @@ const signupSubmitButtonEl = signupFormEl.querySelector("button[type=submit]");
 
 function disableSubmitButton(buttonEl) {
   if (!buttonEl.disabled) {
-    // eslint-disable-next-line no-param-reassign
     buttonEl.dataset.origInnerHTML = buttonEl.innerHTML;
-    // eslint-disable-next-line no-param-reassign
     buttonEl.disabled = true;
-    // eslint-disable-next-line no-param-reassign
     buttonEl.innerText = "Loading...";
   }
 }
 
 function enableSubmitButton(buttonEl) {
   if (buttonEl.disabled) {
-    // eslint-disable-next-line no-param-reassign
     buttonEl.disabled = false;
-    // eslint-disable-next-line no-param-reassign
     buttonEl.innerHTML = buttonEl.dataset.origInnerHTML;
-    // eslint-disable-next-line no-param-reassign
     delete buttonEl.dataset.origInnerHTML;
   }
 }
@@ -416,7 +407,6 @@ function submitFetch(submitOptions) {
 
       return response.json().then((data) => {
         if (!response.ok) {
-          // eslint-disable-next-line no-throw-literal
           throw { responseData: data };
         }
 
@@ -773,7 +763,6 @@ function handleSubmit(
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error("recaptcha error: ", e);
-      // eslint-disable-next-line no-alert
       alert(
         "Unexpected error occurred while validating CAPTCHA. Please try again or contact us for assistance",
       );
